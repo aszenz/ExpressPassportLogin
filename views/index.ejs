@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FB & Google Login Express App</title>
+</head>
+
+<body>
+	<nav>
+		<a href="/">Home</a>
+		<% if (!user) { %>
+		<a href="/login">Login</a>
+		<% } else { %>
+		<a href="/account">Account</a>
+		<a href="/logout">Logout</a>
+		<% } %>
+	</nav>
+
+	<% if (!user) { %>
+	<div>
+		<h2>Welcome! Please log in.</h2>
+	</div>
+	<% } else { %>
+	<div>
+		<h2>Hello,
+			<%= user.displayName %>.</h2>
+	</div>
+	<% } %>
+</body>
+
+</html>
